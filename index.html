@@ -1,9 +1,73 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url='https://kprf.ru'" />
-  </head>
-  <body>
-    <p>Please follow <a href="https://kprf.ru">this link</a>.</p>
-  </body>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+    <meta charset="UTF-8">
+    <title>тян бы)</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<div id="back">
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+    <div class="subBack"></div>
+</div>
+<!--<canvas id="background"></canvas>-->
+<div id="greeting">
+<h1 id="tyanBySign">АНКАП</h1><h4 id="credits">by shagulka</h4><h5  id="getMail"><a href="https://static.wikia.nocookie.net/girlsfrontline/images/b/bc/Negev_norm.png/revision/latest?cb=20160920090236">картинка Негев (красивая)</a></h5>
+    <p> до региона: </p>
+    <p id="demo"></p>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Jan 16, 2022 9:00:00").getTime();
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+                + minutes + "m " + seconds + "s ";
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "РЕГИОН ИДЁТ/ПРОШЁЛ";
+            }
+        }, 1000);
+    </script>
+    <p>Ванюта: <a href="https://t.me/vanutp">КЛИК</a></p>
+</div>
+<!--<script src="index.js"></script>-->
+</body>
 </html>
