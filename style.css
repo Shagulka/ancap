@@ -1,70 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-
-*, *::before, *::after {
-  padding: 0;
-  margin: 0 auto;
-  box-sizing: border-box;
+/*#greeting{*/
+/*    position: absolute;*/
+/*    left: 50%;*/
+/*    top: 50%;*/
+/*}*/
+#back{
+    /*background-image: url("tyanByBackground2.png");*/
+    /*width: 1000%;*/
+    /*height: 1000%;*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(30deg);
+    z-index: -999;
+    /*overflow:hidden;*/
+    font-size: 0px;
+    white-space: nowrap;
+    background-color: #18242c;
+}
+.subBack{
+    white-space: nowrap;
+    display: inline-block;
+    background-image: url("tyanByBackground2.png");
+    width: 158px;
+    height: 1000000px;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 2000s;
+}
+.subBack:nth-child(odd) {
+    animation-name: slideout;
+}
+.subBack:nth-child(even) {
+    animation-name: slidein;;
 }
 
-body {
-  background-color: black;
-  height: 100vh; 
-  display: grid;
-  grid-template: repeat(15, 1fr) / repeat(15, 1fr);
-  overflow: hidden;
-}
-
-.cell {
-  width: 100%;
-  height: 100%;
-  // border: 1px solid #fff1;
-  z-index: 2;
-}
-
-@for $i from 0 to 15 {
-  .cell:nth-child(15n + #{$i + 1}):hover ~ .content {
-    --positionX: #{$i};
-  }
-  .cell:nth-child(n + #{15 * $i + 1}):nth-child(-n + #{15 * ($i + 1)}):hover ~ .content {
-    --positionY: #{$i};
-  }
-}
-
-.content {
-  --positionX: 7;
-  --positionY: 7;
-
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.css {
-  font-family: 'Fredoka One', cursive;
-  position: absolute;
-  top: 50%; left: 50%;
-  animation: color 3s infinite linear;
-  text-shadow: 0 0 10px #000a;
-  transition: all 0.5s;
-
-  @for $i from 0 to 10 {
-    &:nth-child(#{$i + 1}) {
-      font-size: #{100 + $i * 10}px;
-      animation-delay: #{$i * -0.3}s;
-      opacity: #{0.1 + $i * 0.1};
-      transform:
-        translateX(calc(-50% - (var(--positionX) - 7) * #{(7 - $i) * 3px}))
-        translateY(calc(-50% - (var(--positionY) - 7) * #{(7 - $i) * 3px}))
-        rotateX(calc(0deg - (var(--positionY) - 7) * 5deg))
-        rotateY(calc((var(--positionX) - 7) * 5deg));
+@keyframes slidein {
+    from {
+       transform: translateY(-60000px);
     }
-  }
 
-  @keyframes color {
-    @for $c from 0 through 10 {
-      #{$c * 10%} { color: hsl(36 * $c, 75%, 75%); }
+    to {
+        transform: translateY(-30000px);
     }
-  }
+}
+@keyframes slideout {
+    from {
+        transform: translateY(-30000px);
+    }
+
+    to {
+        transform: translateY(-60000px);
+    }
+}
+
+
+#greeting{
+    background: rgba(0,0,0,0.5);
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: Helvetica;
+    color: white;
+}
+#tyanBySign{
+    font-size: 400%;
+}
+#credits{
+    font-size: 200%;
+}
+#getMail{
+    font-size: 200%;
+}
+a{
+    text-align: center;
+    color: white;
+}
+#lol{
+    transform: translateX(-50%);
+    margin-left: 50%;
+
+}
+#background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -999;
 }
